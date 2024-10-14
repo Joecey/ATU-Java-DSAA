@@ -1,4 +1,4 @@
-package w2w3.ie.atu.sw;
+package w2.ie.atu.sw;
 
 // Again, interface gives us blueprints for WHAT LineItem should look like
 // it DOES NOT tell us HOW to do it

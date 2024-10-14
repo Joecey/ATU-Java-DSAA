@@ -1,4 +1,4 @@
-package w2w3.ie.atu.sw;
+package w2.ie.atu.sw;
 
 public class Main {
     public static void main(String[] args) {
