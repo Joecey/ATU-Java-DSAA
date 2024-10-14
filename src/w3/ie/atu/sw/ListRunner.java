@@ -24,5 +24,33 @@ public class ListRunner {
 
         // Here, we are invoking List Methods
 
+        // even if we changed ArrayList to a different type of List - the below methods will still work fine!
+        List<String> invokeList = new ArrayList<String>();
+//        List<String> invokeList = new LinkedList<String>();
+//        List<String> invokeList = new Vector<String>();
+        for (int i = 0; i < 1000; i++) {
+            invokeList.add("Valorant_00" + i);
+        }
+
+        // now we query our List
+        System.out.println(invokeList);
+        System.out.println("This list has " + invokeList.size() + " elements");
+        invokeList.remove(77);
+        int index = invokeList.indexOf("Valorant_009999");
+        boolean hasElement = invokeList.contains("Valorant_009999");
+
+        System.out.println("index search: " + index + ", element has: " + hasElement);
+
+
+        invokeList.set(100, "Valorant_009999");
+        index = invokeList.indexOf("Valorant_009999");
+        hasElement = invokeList.contains("Valorant_009999");
+
+        System.out.println("index search: " + index + ", element has: " + hasElement);
+
+
+        invokeList.clear(); // wipe the list
+        System.out.println(invokeList);
+
     }
 }
