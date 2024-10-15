@@ -28,29 +28,40 @@ public class ListRunner {
         List<String> invokeList = new ArrayList<String>();
 //        List<String> invokeList = new LinkedList<String>();
 //        List<String> invokeList = new Vector<String>();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 20; i++) {
             invokeList.add("Valorant_00" + i);
         }
 
         // now we query our List
         System.out.println(invokeList);
         System.out.println("This list has " + invokeList.size() + " elements");
-        invokeList.remove(77);
-        int index = invokeList.indexOf("Valorant_009999");
-        boolean hasElement = invokeList.contains("Valorant_009999");
+        invokeList.remove(7); // remove index 7 // O(n)
+        int index = invokeList.indexOf("Valorant_009999"); // O(n)
+        boolean hasElement = invokeList.contains("Valorant_009999");    // O(n)
 
         System.out.println("index search: " + index + ", element has: " + hasElement);
 
 
-        invokeList.set(100, "Valorant_009999");
+        invokeList.set(9, "Valorant_009999");
         index = invokeList.indexOf("Valorant_009999");
         hasElement = invokeList.contains("Valorant_009999");
 
         System.out.println("index search: " + index + ", element has: " + hasElement);
 
 
-        invokeList.clear(); // wipe the list
+        invokeList.clear(); // wipe the list O(n)
         System.out.println(invokeList);
+
+        // Add new element to the end of the list - this has a constant time of O(1) since we know we want to add
+        // it at the end
+        invokeList.add("LOL_PLayer_1");
+        invokeList.add("LOL_PLayer_2");
+        System.out.println(invokeList);
+
+        // adding element with index
+        invokeList.add(1, "LOL_PLayer_3"); // Linear time O(n) - remember, we ignore constants!
+        System.out.println(invokeList);
+        System.out.println(invokeList.size());  // O(n)
 
     }
 }
