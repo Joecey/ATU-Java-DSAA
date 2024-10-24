@@ -1,7 +1,6 @@
 package w4.ie.atu.sw;
 
-public interface LineItem {
-
+public interface LineItem extends Comparable<LineItem> {
 
     public void setItemNumber(String number);
 

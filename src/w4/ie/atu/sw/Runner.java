@@ -1,4 +1,4 @@
-package w4.ie.atu.sw;
+    package w4.ie.atu.sw;
 
 public class Runner {
     public static void main(String[] args) {
@@ -6,9 +6,9 @@ public class Runner {
         System.out.println("Note: See the naming conventions we use ");
 
         Order o = new OrderImpl("QB-69420");
-        LineItem item1 = new LineItemImpl("AA1", "Hatsune Miku figure", 4, 899.86f);
-        LineItem item2 = new LineItemImpl("AA2", "Plushie", 19, 20.99f);
-        LineItem item3 = new LineItemImpl("AA3", "Can of Heinz Beans", 100, 3.00f);
+        LineItem item1 = new LineItemImpl("AA3", "Hatsune Miku figure", 4, 899.86f);
+        LineItem item2 = new LineItemImpl("AA1", "Plushie", 19, 20.99f);
+        LineItem item3 = new LineItemImpl("AA2", "Can of Heinz Beans", 100, 3.00f);
 
         o.addItem(item1);
         o.addItem(item2);
@@ -22,6 +22,12 @@ public class Runner {
         System.out.println("Total: " + o.getTotal());
 
         System.out.println("Tree Implementation");
+
+        // this causes a problem becomes it will only remove the first instance of the item
+        // so - we had to create a hashcode to allow for better comparison (generate hashCode)
+        LineItem itemX = new LineItemImpl("AA2", "Can of Heinz Beans", 100, 3.00f);
+        o.removeItem(itemX);
+        System.out.println("Count: " + o.items().length);
 
     }
 }

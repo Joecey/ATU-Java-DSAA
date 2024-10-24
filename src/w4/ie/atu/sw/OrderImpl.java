@@ -37,6 +37,7 @@ public class OrderImpl implements Order {
 
     public LineItem[] items() {
         // encapsulation - nobody knows we're using LineItem here
+        Collections.sort(items);    // now - this will use our custom compareTo method !!!
         LineItem[] temp = new LineItem[items.size()];
         for (int i = 0; i < items.size(); i++) {
             temp[i] = items.get(i);
@@ -48,7 +49,7 @@ public class OrderImpl implements Order {
     public float getTotal() {
         float total = 0.0f;
 
-        for (LineItem item : items){
+        for (LineItem item : items) {
             total += (item.getItemQuantity() * item.getItemPrice());
 
         }
