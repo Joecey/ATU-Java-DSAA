@@ -21,13 +21,27 @@ public class Runner {
 
         System.out.println("Total: " + o.getTotal());
 
-        System.out.println("Tree Implementation");
-
         // this causes a problem becomes it will only remove the first instance of the item
         // so - we had to create a hashcode to allow for better comparison (generate hashCode)
         LineItem itemX = new LineItemImpl("AA2", "Can of Heinz Beans", 100, 3.00f);
         o.removeItem(itemX);
         System.out.println("Count: " + o.items().length);
+
+        System.out.println("Tree Implementation");
+
+        NodeImpl<String> root = new NodeImpl<String>(null, "John");
+
+        NodeImpl<String> paul = new NodeImpl<String>(root, "Paul");
+        NodeImpl<String> anne = new NodeImpl<String>(root, "Anne");
+
+        NodeImpl<String> mary = new NodeImpl<String>(paul, "Mary");
+        NodeImpl<String> pat = new NodeImpl<String>(paul, "Pat");
+
+        NodeImpl<String> mike = new NodeImpl<String>(anne, "Mike");
+        NodeImpl<String> cathy = new NodeImpl<String>(anne, "Cathy");
+        NodeImpl<String> emer = new NodeImpl<String>(anne, "Emer");
+
+
 
     }
 }
