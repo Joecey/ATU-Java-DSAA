@@ -1,9 +1,11 @@
-package w5.ie.atu.sw;
+package w7.ie.atu.sw;
+
+import w5.ie.atu.sw.ComparableStudent;
 
 import java.util.Date;
 
 // in order to use Comparable interface, a compareTo method must be created!
-public class Student {
+public class Student implements Comparable<Student>{
     private String name;
     private Date dob;
     private float gpa = 0.00f;
@@ -33,5 +35,15 @@ public class Student {
         return id;
     }
 
-
+    // now our Comparable method (we can use the implement methods functionality
+    public int compareTo(Student other) {
+        // there's a float.compare() function if needed
+        if (this.gpa < other.getGpa()) {
+            return 1;   // other is greater than me
+        } else if (this.gpa > other.getGpa()) {
+            return -1;  // other is less than me
+        } else {
+            return 0;
+        }
+    }
 }
