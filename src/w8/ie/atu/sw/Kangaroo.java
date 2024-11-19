@@ -2,6 +2,7 @@ package w8.ie.atu.sw;
 
 public class Kangaroo extends JumpingAnimal{
     private Pouch pouch = new Pouch();
+    private int size = 7; // start life with a size of 7
 
     public Kangaroo(String name, int maxHeight) {
         super(name, maxHeight);
@@ -16,6 +17,18 @@ public class Kangaroo extends JumpingAnimal{
         System.out.println(this.getName() + " is jumping as a Kangaroo");
         super.move();
         this.eat();
+    }
+
+    @Override
+    public void eat() {
+        super.eat();
+        System.out.println(this.getClass().getName() + " is eating...");
+        size++;
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(this.getClass().getName() + " is sleeping lying down...");
     }
 
     private class Pouch {

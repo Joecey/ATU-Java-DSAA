@@ -1,6 +1,6 @@
 package w8.ie.atu.sw;
 import java.util.*;
-public class Animal {
+public abstract class Animal {
     private int lifeForce;
     private String name;
 
@@ -16,6 +16,7 @@ public class Animal {
         this.lifeForce = lifeForce;
     }
 
+    public abstract void sleep();   // an abstract / deferred method
 
     // visible only to subtypes and co-packaged types
     protected String getName() {
@@ -23,10 +24,13 @@ public class Animal {
     }
 
     public void eat(){
+        System.out.println(this.getClass().getName() + " is eating...");
         lifeForce++;
     }
 
     public void move() throws Exception{
         if (lifeForce < 0) throw new Exception("Cannot move because " + this.name + " is dead.");
+        if (lifeForce <= 100) sleep();  // this works still even though it's not implemented
+        lifeForce--;
     }
 }

@@ -1,6 +1,6 @@
 package w8.ie.atu.sw;
 
-public class JumpingAnimal extends Animal{
+public abstract class JumpingAnimal extends Animal{
     private int maxHeight;
 
     public JumpingAnimal(String name, int maxHeight) {

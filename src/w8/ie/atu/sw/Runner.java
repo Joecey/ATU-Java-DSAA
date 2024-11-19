@@ -2,7 +2,7 @@ package w8.ie.atu.sw;
 
 public class Runner {
     public static void main(String[] args) throws Exception {
-        Animal a = new Animal("Sheep");
+        Animal a = new RaceHorse("Sheep", 40); // abstract class can't be instantiated
         a.move();
         a.eat();
 
@@ -24,5 +24,7 @@ public class Runner {
     }
     public static void visit(JumpingAnimal j) throws Exception{
         j.jump();   // behaviour depends on type of JumpingAnimal = POLYMORPHISM - swapping animal type, and what happens here depends on conditional
+        j.eat();
+        j.sleep();
     }
 }
