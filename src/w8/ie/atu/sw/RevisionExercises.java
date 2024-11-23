@@ -12,7 +12,7 @@ public class RevisionExercises {
         Legume legume2 = new JumpingBean("Big jumper 2");
         legume2 = new Pea("Pea pea");
         legume2.grow();
-        legume2.mush(); // won't work as it still has the methods of Legume or JumpingBean
+//        legume2.mush(); // won't work as it still has the methods of Legume or JumpingBean
 
         // Declaration 3
         Legume legume3 = new JumpingBean("Big jumper 3");

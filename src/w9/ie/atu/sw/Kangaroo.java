@@ -1,7 +1,6 @@
-package w8.ie.atu.sw;
+package w9.ie.atu.sw;
 
-
-public class Kangaroo extends JumpingAnimal  {
+public class Kangaroo extends JumpingAnimal {
     private Pouch pouch = new Pouch();
     private int size = 7; // start life with a size of 7
 
